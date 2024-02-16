@@ -3,6 +3,10 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 
+/**
+ * No Modules!
+ */
+
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes)]
+  providers: [provideRouter(routes)],
 };

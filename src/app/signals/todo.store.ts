@@ -28,10 +28,11 @@ export const TodoStore = signalStore(
       patchState(store, { items: [...store.items(), item] });
     },
     update(item: string) {
-      const updatedItems = store
-        .items()
-        .map((existingItem) => (existingItem === item ? item : existingItem));
-      patchState(store, { items: updatedItems });
+      patchState(store, {
+        items: store
+          .items()
+          .map((existingItem) => (existingItem === item ? item : existingItem)),
+      });
     },
     remove(item: string) {
       patchState(store, {
